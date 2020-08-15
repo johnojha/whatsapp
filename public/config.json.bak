@@ -1,0 +1,30 @@
+{
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "icon.png",
+    "category": "message"
+  },
+  "type": "REST",
+  "userInterfaces": {
+    "configInspector": {
+      "size": "medium"
+    }
+  },
+   "arguments": {
+        "execute": {
+            "inArguments": [
+                {
+                  "email": "{{Contact.Default.EmailAddress}}",
+                  "to": "{{Contact.Attribute.Shashi-SMS.phone}}" 
+                }               
+            ],
+            "outArguments": [],
+            "url": "https://sfmc-test123.herokuapp.com/journeybuilder/execute",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 2000
+        }
+    }
+}
