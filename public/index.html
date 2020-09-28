@@ -10,6 +10,53 @@
 
   <script src="postmonger.js"></script>
   <script src="activity.js"></script>
+  
+  
+  <script>
+    
+    var json={
+  "name": "",
+  "id": null,
+  "key": "REST-1",
+  "arguments": {
+    "execute": {
+      "inArguments": [
+        
+        {"Phone" : "{{Contact.Attribute.SMSFinal.phone}}" },
+	{"Name" : "{{Contact.Attribute.SMSFinal.name}}" }
+        
+      ],
+      "url": "https://pikachu-sms-twilio.herokuapp.com/sendWhatsapp",
+ 	"verb":"Post",
+	"format":"json"
+    }
+  },
+  "configurationArguments": {
+    "applicationExtensionKey": "d41fe724-2cd4-44fa-90b7-65a907854418",
+    "publish": {
+      "url": "https://pikachu-sms-twilio.herokuapp.com/sendWhatsapp"
+    }
+  },
+  "metaData": {
+    "icon": "https://sfmc-test123.herokuapp.com/icon.png",
+    "category": "message",
+    "iconSmall": null,
+    "original_icon": "icon.png",
+    "isConfigured": true
+  },
+  "editable": true,
+  "outcomes": [
+    {
+      "next": "WAITBYDURATION-1"
+    }
+  ],
+  "errors": []
+};
+
+var myJSON = JSON.stringify(json);
+document.getElementById("configuration").innerHTML = myJSON;
+    
+  </script>
 
 </body>
 </html>
